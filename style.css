@@ -69,6 +69,7 @@ nav {
   color: #fff;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -83,10 +84,12 @@ nav {
     width: 25%;
     max-width: 300px;
     z-index: 998; /* Ensure the menu stays above the rest of the content */
+    font-size: 0.85rem;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow to the menu */
   }
 
   .nav-links li {
-    padding: 5%;
+    padding: 10%;
   }
 
   .nav-links.active {
@@ -108,6 +111,10 @@ nav {
 }
 
 /* Services section styles */
+#services {
+  text-align: center;
+}
+
 .service {
   text-align: center;
   padding: 2rem;
