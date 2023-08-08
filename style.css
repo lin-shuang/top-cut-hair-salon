@@ -1,0 +1,139 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent dark background */
+    backdrop-filter: blur(5px); /* Add blur effect (may not be supported in all browsers) */
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+    color: #fff;
+    padding: 1rem;
+    z-index: 999; /* Ensure the header stays on top of other elements */
+}
+
+.logo {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 15%;
+  padding-top: 25px;
+}
+
+/* Menu icon styles */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+}
+
+/* Navigation links styles */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 15%;
+  padding-top: 25px;
+}
+
+.nav-links li {
+  margin-left: 1rem;
+  display: inline-block;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 57.3px; /* Adjust as needed to avoid overlapping the header */
+    left: auto; /* Reset the right property to default */
+    right: 5%; /* Move the menu to the left by 5% */
+    background-color: rgba(51, 51, 51, 0.7);
+    backdrop-filter: blur(5px); /* NOT WORKING ///////////////////////////////////////////////////////////////////*/
+    -webkit-backdrop-filter: blur(5px); /* NOT WORKING ///////////////////////////////////////////////////////////////////*/
+    width: 25%;
+    max-width: 300px;
+    z-index: 998; /* Ensure the menu stays above the rest of the content */
+  }
+
+  .nav-links li {
+    padding: 5%;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute; /* Adjust the position for the icon */
+    top: 15px;
+    right: 15.25%; /* Move the icon to the left by 5% */
+  }
+}
+
+/* Hero section styles */
+.hero {
+  text-align: center;
+  padding: 5rem 0;
+}
+
+/* Services section styles */
+.service {
+  text-align: center;
+  padding: 2rem;
+}
+
+.service img {
+  max-width: 100%;
+}
+
+/* About section styles */
+#about {
+  background-color: #fff599;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+/* Contact section styles */
+#contact {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
