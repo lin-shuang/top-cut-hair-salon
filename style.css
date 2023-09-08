@@ -141,6 +141,52 @@ nav {
   max-width: 500px;
 }
 
+/* Image Grid styles */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Adjust the gap as needed */
+}
+
+.grid-item {
+  text-align: center;
+  position: relative; /* Required for absolute positioning of description */
+}
+
+.grid-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Description styles */
+.grid-item .description {
+  display: none; /* Initially hidden */
+  position: absolute;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.grid-item .description-cover {
+  display: none; /* Initially hidden */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.5); /* Background color for description */
+  position: absolute;
+}
+
+/* Hover effect - show description on hover */
+.grid-item:hover .description {
+  display: block;
+}
+.grid-item:hover .description-cover{
+  display: block;
+}
+
 /* About section styles */
 #about {
   background-color: #FFCDCB;
