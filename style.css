@@ -126,15 +126,90 @@ nav {
 
 /* About section styles */
 #about {
-  background-color: #fff599;
+  background-color: #FFCDCB;
   padding: 3rem 0;
   text-align: center;
 }
 
 /* Contact section styles */
 #contact {
-  text-align: center;
-  padding: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-info,
+.address-info,
+.hours-info {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  #contact {
+    flex-direction: column; /* Stack sections top-down */
+    align-items: center; /* Center align sections horizontally */
+  }
+
+  .contact-info,
+  .address-info,
+  .hours-info {
+    width: 100%; /* Full width for each section */
+    text-align: center; /* Center-align the content */
+  }
+}
+
+/* Call button styles */
+.call-button {
+  display: inline-block;
+  padding: 15px 30px; /* Increase padding for a larger button */
+  font-size: 20px; /* Increase font size for a larger button */
+  background-color: #FF9A97; /* Customize the button color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.call-button:hover {
+  background-color: #804D4C; /* Change color on hover */
+}
+
+/* Directions button styles */
+.directions-button {
+  display: inline-block;
+  padding: 15px 30px; /* Increase padding for a larger button */
+  font-size: 20px; /* Increase font size for a larger button */
+  background-color: #FF9A97; /* Customize the button color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.directions-button:hover {
+  background-color: #804D4C; /* Change color on hover */
+}
+
+/* Business hours table styles */
+.business-hours {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.business-hours th,
+.business-hours td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.business-hours th {
+  background-color: #f9f9f9;
+  font-weight: bold;
 }
 
 /* Footer styles */
@@ -143,4 +218,8 @@ footer {
   background-color: #333;
   color: #fff;
   padding: 1rem;
+  position:relative;
+  bottom: 0;
+  width: 100%; /* Make the footer span the entire width */
+  z-index: 999; /* Ensure the footer stays on top of other elements */
 }
