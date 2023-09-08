@@ -146,6 +146,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
   gap: 20px; /* Adjust the gap as needed */
+  margin: 5%;
 }
 
 .grid-item {
@@ -165,7 +166,7 @@ nav {
   color: #fff;
   padding: 20px;
   text-align: center;
-  bottom: 0;
+  top: 40%;
   left: 0;
   right: 0;
 }
@@ -174,8 +175,9 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 5px;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.5); /* Background color for description */
+  backdrop-filter: blur(5px); 
   position: absolute;
 }
 
@@ -185,6 +187,53 @@ nav {
 }
 .grid-item:hover .description-cover{
   display: block;
+}
+
+/* Popup styles */
+.popup {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  overflow: auto;
+  text-align: center;
+}
+
+.popup-content {
+  top: 20%;
+  background-color: #fff;
+  max-width: 80%;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+}
+
+.popup-info {
+  display: flex;
+  align-items: center; /* Vertically center align the content */
+}
+
+.popup-content img{
+  max-height: 80vh; /* Set a maximum height for the image */
+  max-width: 80%; /* Set a maximum width for the image */
+  margin-right: 20px; /* Add some spacing between image and description */
+}
+
+.popup-description {
+  flex-grow: 1; /* Expand to fill available space */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #000;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 /* About section styles */

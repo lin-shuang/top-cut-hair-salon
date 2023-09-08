@@ -26,6 +26,7 @@
 
   <section id="home">
     <div class="hero">
+      <br>
       <h1>Welcome</h1>
       <p>Discover the perfect hairstyle that suits you best.</p>
     </div>
@@ -38,28 +39,37 @@
     <div class="image-grid">
       <div class="grid-item">
         <img src="./src/images/test1.jpg" alt="Service 1">
-        <div class="description-cover"></div>
+        <div class="description-cover" onclick="openPopup('./src/images/test1.jpg', 'Service 1 Description')"></div>
         <div class="description">
           <p>Description</p>
         </div>
       </div>
       <div class="grid-item">
         <img src="./src/images/test2.jpg" alt="Service 2">
-        <div class="description-cover"></div>
+        <div class="description-cover" onclick="openPopup('./src/images/test2.jpg', 'Service 2 Description')"></div>
         <div class="description">
           <p>Description</p>
         </div>
       </div>
       <div class="grid-item">
         <img src="./src/images/test1.jpg" alt="Service 3">
-        <div class="description-cover"></div>
+        <div class="description-cover" onclick="openPopup('./src/images/test1.jpg', 'Service 3 Description')"></div>
         <div class="description">
           <p>Description</p>
         </div>
       </div>
     </div>
-    
   </section>
+  <!-- Popup Container -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <div class="popup-info">
+        <img src="" alt="" id="popup-image">
+        <div id="popup-description"></div>
+      </div>
+    </div>
+  </div>
 
   <section id="about">
     <h2>About Us</h2>
@@ -113,6 +123,7 @@
   <footer>
     <p>&copy; 2023 Top Cut Hair Salon. All rights reserved.</p>
   </footer>
-  <script src="src/nav-links.js"></script>
+  <script src="./src/nav-links.js"></script>
+  <script src="./src/gallery-popup.js"></script>
 </body>
 </html>
