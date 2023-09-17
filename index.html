@@ -120,7 +120,14 @@
   <footer>
     <p>&copy; 2023 Top Cut Hair Salon. All rights reserved.</p>
   </footer>
-  <script src="./src/nav-links.js"></script>
+  <script>
+    const menuIcon = document.getElementById("menu-icon");
+    const navLinks = document.getElementById("nav-links");
+
+    menuIcon.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
   <script src="./src/gallery-popup.js"></script>
 </body>
 </html>
