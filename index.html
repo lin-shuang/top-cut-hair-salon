@@ -10,7 +10,7 @@
   <header>
     <nav>
       <div class="logo"><b>Top Cut Hair Salon</b></div>
-      <div class="menu-icon" id="menu-icon">
+      <div class="menu-icon" id="menu-icon" onclick="openSideMenu()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
@@ -120,14 +120,7 @@
   <footer>
     <p>&copy; 2023 Top Cut Hair Salon. All rights reserved.</p>
   </footer>
-  <script>
-    const menuIcon = document.getElementById("menu-icon");
-    const navLinks = document.getElementById("nav-links");
-
-    menuIcon.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  </script>
+  <script src="./src/nav-links.js"></script>
   <script src="./src/gallery-popup.js"></script>
 </body>
 </html>
