@@ -279,7 +279,7 @@ nav {
 .address-info,
 .hours-info {
   flex: 1;
-  padding: 20px;
+  padding: 1rem;
 }
 
 /* Media query for smaller screens */
@@ -294,6 +294,13 @@ nav {
   .hours-info {
     width: 100%; /* Full width for each section */
     text-align: center; /* Center-align the content */
+    padding: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .hours-info{
+    width: 80%; /* Full width for each section */
   }
 }
 
@@ -360,6 +367,12 @@ footer {
   padding: 1rem;
   position:relative;
   bottom: 0;
-  width: 98%; /* Make the footer span the entire width */
+   /* Make the footer span the entire width */
   z-index: 999; /* Ensure the footer stays on top of other elements */
 }
+
+/* debug outline
+*{
+  outline: 1px solid red;
+ }
+ */
