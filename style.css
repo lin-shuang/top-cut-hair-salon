@@ -1,9 +1,16 @@
 /* Reset some default styles */
-body, h1, h2, h3, p, ul, li {
+body {
     margin: 0;
     padding: 0;
     list-style: none;
     font-family: Arial, sans-serif;
+    --text: rgb(255, 255, 255);
+    --background: rgb(32, 32, 32);
+    --primary: rgb(100, 100, 100);
+    --secondary: rgb(124, 47, 47);
+    --accent: rgb(212, 30, 109);
+    background-color: var(--background);
+    color: var(--text);
 }
 
 /* Header styles */
@@ -12,11 +19,10 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 5%;
+    height: 2.5rem;
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
     backdrop-filter: blur(5px); /* Add blur effect (may not be supported in all browsers) */
     -webkit-backdrop-filter: blur(5px); /* Safari support */
-    color: #fff;
     padding: 1rem;
     z-index: 999; /* Ensure the header stays on top of other elements */
 }
@@ -27,13 +33,15 @@ header {
   left: 10%;
   padding: 1rem;
   height: 1rem;
-  top: 0;
+  top: 1rem;
+  background: linear-gradient(120deg, var(--text), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Menu icon styles */
 .menu-icon {
   display: none;
-  cursor: pointer;
   padding: 0.1rem;
   height: 1rem;
   top: 0;
@@ -42,7 +50,7 @@ header {
 .bar {
   width: 25px;
   height: 3px;
-  background-color: #fff;
+  background-color: var(--text);
   margin: 5px 0;
 }
 
@@ -79,7 +87,7 @@ nav {
 }
 
 .nav-links a:hover {
-  background-color: rgb(32, 32, 32); /* Change color on hover */
+  background-color: var(--background); /* Change color on hover */
   transition: background-color 0.3s;
   border-radius: 5px;
   padding: 0.5rem; /* Increase padding for a larger button */
@@ -91,9 +99,9 @@ nav {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 100%; /* Adjust as needed to avoid overlapping the header */
+    top: 3.5rem; /* Adjust as needed to avoid overlapping the header */
     left: auto; /* Reset the right property to default */
-    background-color: rgba(32, 32, 32, 1);
+    background-color: var(--primary);
     width: 25%;
     z-index: 998; /* Ensure the menu stays above the rest of the content */
     right: -100%; /* Move the links off the screen */
@@ -108,7 +116,7 @@ nav {
   }
   
   .nav-links a:hover {
-    background-color: rgb(64, 64, 64); /* Change color on hover */
+    background-color: var(--background); /* Change color on hover */
     transition: background-color 0.3s;
     border-radius: 5px;
     padding-right: 0.2rem;
@@ -132,7 +140,7 @@ nav {
   .menu-icon {
     display: block;
     position: absolute; /* Adjust the position for the icon */
-    top: 15px;
+    top: 2rem;
     right: 13%; /* Move the icon to the left by 5% */
     z-index: 999; /* Ensure the menu stays above the rest of the content */
     padding-bottom: 0.9rem;
@@ -140,20 +148,35 @@ nav {
     padding-left: 0.2rem;
   }
 
-  .menu-icon:hover {
-    background-color: rgb(32, 32, 32); /* Change color on hover */
+  .menu-overlay {
+    display: block;
+    position: absolute; /* Adjust the position for the icon */
+    top: 2rem;
+    right: 13%; /* Move the icon to the left by 5% */
+    z-index: 1000; /* Ensure the menu stays above the rest of the content */
+    padding-bottom: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    opacity: 1; /* Initially invisible */
+    cursor: pointer;
+  }
+
+  .menu-overlay:hover {
+    background-color: var(--primary); /* Change color on hover */
     transition: background-color 0.3s;
     border-radius: 5px;
-    padding-bottom: 0.9rem;
-    padding-right: 0.2rem;
-    padding-left: 0.2rem;
+    padding-bottom: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    opacity: 0.5; /* Initially invisible */
   }
 }
 
 /* Hero section styles */
 .hero {
-  text-align: center;
-  padding: 5rem 0;
+  padding: 10rem;
+  background-size: cover;
+  background-image: url('./src/images/background.jpg');
 }
 
 /* Services section styles */
@@ -286,8 +309,6 @@ nav {
 #contact {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(64, 64, 64);
-  color: white;
 }
 
 .contact-info,
@@ -324,8 +345,8 @@ nav {
   display: inline-block;
   padding: 15px 30px; /* Increase padding for a larger button */
   font-size: 20px; /* Increase font size for a larger button */
-  background-color: #FF9A97; /* Customize the button color */
-  color: rgb(32, 32, 32);
+  background-color: var(--secondary); /* Customize the button color */
+  color: var(--text);
   text-decoration: none;
   border-radius: 5px;
   margin-top: 15px;
@@ -334,7 +355,7 @@ nav {
 }
 
 .call-button:hover {
-  background-color: #804D4C; /* Change color on hover */
+  background-color: var(--accent); /* Change color on hover */
 }
 
 /* Directions button styles */
@@ -342,8 +363,8 @@ nav {
   display: inline-block;
   padding: 15px 30px; /* Increase padding for a larger button */
   font-size: 20px; /* Increase font size for a larger button */
-  background-color: #FF9A97; /* Customize the button color */
-  color: rgb(32, 32, 32);
+  background-color: var(--secondary); /* Customize the button color */
+  color: var(--text);
   text-decoration: none;
   border-radius: 5px;
   margin-top: 15px;
@@ -352,7 +373,7 @@ nav {
 }
 
 .directions-button:hover {
-  background-color: #804D4C; /* Change color on hover */
+  background-color: var(--accent); /* Change color on hover */
 }
 
 /* Business hours table styles */
@@ -379,15 +400,11 @@ footer {
   text-align: center;
   background-color: rgb(32, 32, 32);
   color: #fff;
-  padding: 1rem;
   position:relative;
   bottom: 0;
-   /* Make the footer span the entire width */
-  z-index: 999; /* Ensure the footer stays on top of other elements */
 }
 
 /* debug outline
 *{
   outline: 1px solid red;
- }
- */
+} */

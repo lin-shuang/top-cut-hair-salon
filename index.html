@@ -4,38 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Top Cut Hair Salon</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <header>
     <nav>
       <div class="logo"><b>Top Cut Hair Salon</b></div>
-      <div class="menu-icon" id="menu-icon" onclick="openSideMenu()">
+      <div class="menu-icon" id="menu-icon">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </div>
+      <div class="menu-overlay" id="menu-overlay"></div>
+
       <ul class="nav-links" id="nav-links">
         <li><a href="#home"><b>Home</b></a></li>
         <li><a href="#services"><b>Services</b></a></li>
-        <li><a href="#gallery"><b>Gallery</b></a></li>
+        <li><a href="gallery.html"><b>Gallery</b></a></li>
         <li><a href="#contact"><b>Contact Us</b></a></li>
       </ul>
     </nav>
   </header>
 
   <section id="home">
-    <div class="hero">
-      <br>
-      <h1>Welcome</h1>
-      <p>Discover the perfect hairstyle that suits you best.</p>
-    </div>
+    <div class="hero"></div>
   </section>
+  <br>
 
   <section id="services">
     <h2>Our Services</h2>
-    <br>
-
     <div class="image-grid">
       <div class="grid-item">
         <img src="./src/images/test1.jpg" alt="Service 1">
@@ -79,11 +76,9 @@
       <h2>Contact</h2>
       <a href="tel:+1234567890" class="call-button">Call Now</a>
       <p>If you have any questions or want to book an appointment, feel free to contact us:</p>
-      <ul>
-        <br>
-        <li>email?</li>
-        <li>+1(215)677-3900</li>
-      </ul>
+      <br>  
+      <p><i>Email???</i></p>
+      <p><i>+1(215)677-3900</i></p>
     </div>
     <div class="address-info">
       <h2>Address</h2>
@@ -120,7 +115,8 @@
   <footer>
     <p>&copy; 2023 Top Cut Hair Salon. All rights reserved.</p>
   </footer>
-  <script src="./src/nav-links.js"></script>
-  <script src="./src/gallery-popup.js"></script>
+
+  <script src="./src/scripts/nav-links.js"></script>
+  <script src="./src/scripts/gallery-popup.js"></script>
 </body>
 </html>
