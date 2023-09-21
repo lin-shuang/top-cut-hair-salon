@@ -174,9 +174,20 @@ nav {
 
 /* Hero section styles */
 .hero {
-  padding: 10rem;
+  padding-top: 20rem;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 100%;
   background-image: url('./src/images/background.jpg');
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 12rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('./src/images/background.jpg');
+  }
 }
 
 /* Services section styles */
@@ -319,7 +330,7 @@ nav {
 }
 
 /* Media query for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   #contact {
     flex-direction: column; /* Stack sections top-down */
     align-items: center; /* Center align sections horizontally */
