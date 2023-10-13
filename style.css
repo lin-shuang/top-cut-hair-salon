@@ -236,16 +236,18 @@ nav {
 .grid-item img {
   max-width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 
 /* Description styles */
 .grid-item .description {
   display: block;
   position: absolute;
-  color: #fff;
+  color: var(--text);
   padding: 20px;
   text-align: center;
-  top: 40%;
+  font-size: 2rem;
+  top: 35%;
   left: 0;
   right: 0;
   opacity: 0;
@@ -257,10 +259,11 @@ nav {
   right: 0;
   bottom: 0;
   opacity: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Background color for description */
+  background-color: rgba(0, 0, 0, 0.8); /* Background color for description */
   backdrop-filter: blur(5px); 
   -webkit-backdrop-filter: blur(5px); /* Safari support */
   position: absolute;
+  border-radius: 7px;
 }
 .grid-item .description-clickable {
   display: block;
@@ -297,15 +300,16 @@ nav {
   z-index: 1000;
   overflow: auto;
   text-align: center;
+  font-size: 1rem;
 }
 
 .popup-content {
-  top: 20%;
-  background-color: #fff;
+  top: 10%;
+  background-color: var(--primary);
   max-width: 80%;
   margin: auto;
-  padding: 20px;
   position: relative;
+  border-radius: 10px;
 }
 
 .popup-info {
@@ -317,6 +321,7 @@ nav {
   max-height: 80vh; /* Set a maximum height for the image */
   max-width: 80%; /* Set a maximum width for the image */
   margin-right: 20px; /* Add some spacing between image and description */
+  border-radius: 10px;
 }
 
 .popup-description {
@@ -325,10 +330,10 @@ nav {
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #000;
-  font-size: 30px;
+  top: 2.5%;
+  right: 2.5%;
+  color: var(--text);
+  font-size: 3rem;
   cursor: pointer;
 }
 
