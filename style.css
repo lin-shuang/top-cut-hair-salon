@@ -6,7 +6,7 @@ body {
     font-family: Arial, sans-serif;
     --text: rgb(255, 255, 255);
     --background: rgb(32, 32, 32);
-    --primary: rgb(100, 100, 100);
+    --primary: rgb(64, 64, 64);
     --secondary: rgb(124, 47, 47);
     --accent: rgb(212, 30, 109);
     background-color: var(--background);
@@ -333,37 +333,79 @@ nav {
 }
 
 /* Contact section styles */
-#contact {
+#info-jump {
+ background-color: var(--primary);
+ margin-left: 5%;
+ margin-right: 5%;
+ border-radius: 10px;
+}
+.information {
   display: flex;
   justify-content: space-between;
 }
+.information h2{
+  text-shadow: 2px 2px var(--background);
+}
 
 .contact-info,
-.address-info,
-.hours-info {
+.address-info {
   flex: 1;
   padding: 1rem;
+  margin-left: 10%;
+  margin-right: 2.5%; /* Gap size */
+  text-align: center;
+}
+
+.hours-info,
+.map-info {
+  flex: 1;
+  padding: 1rem;
+  margin-left: 2.5%; /* Gap size */
+  margin-right: 10%;
+  text-align: center;
+}
+
+.hours-info{
+  padding-bottom: 10%;
+}
+.map-info{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  position: relative;
+}
+.map-info iframe {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  border-radius: 10px;
 }
 
 /* Media query for smaller screens */
 @media (max-width: 900px) {
-  #contact {
+  .information {
     flex-direction: column; /* Stack sections top-down */
     align-items: center; /* Center align sections horizontally */
   }
-
   .contact-info,
+  .hours-info,
   .address-info,
-  .hours-info {
-    width: 100%; /* Full width for each section */
+  .map-info {
+    width: 80%; /* Full width for each section */
     text-align: center; /* Center-align the content */
     padding: 0;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    margin-left: 0;
+    margin-right: 0;
   }
-
-  .hours-info{
-    width: 80%; /* Full width for each section */
+  .map-info {
+    position: relative; /* Position property added */
+    padding-bottom: 50%;
+  }
+  .map-info iframe {
+    position: absolute; /* Position property added */
   }
 }
 
@@ -408,18 +450,21 @@ nav {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  border-collapse: collapse; /* Ensure table borders collapse for rounded corners */
+  border: 1px solid; /* Add a white border around the table */
+  border-radius: 10px; /* Add rounded corners */
+  overflow:hidden
 }
 
 .business-hours th,
 .business-hours td {
   padding: 10px;
-  border: 1px solid #ccc;
   text-align: left;
+  border: 1px solid #ccc; /* Add a border for each cell */
 }
 
-.business-hours th {
-  background-color: #f9f9f9;
-  font-weight: bold;
+.business-hours tr{
+  background: var(--background);
 }
 
 /* Footer styles */
@@ -434,4 +479,5 @@ footer {
 /* debug outline
 *{
   outline: 1px solid red;
-} */
+}
+*/
