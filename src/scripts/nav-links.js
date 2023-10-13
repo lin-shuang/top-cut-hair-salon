@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Get the menu icon and nav-links elements
   const menuIcon = document.querySelector(".menu-overlay");
   const navLinks = document.getElementById("nav-links");
+  const overlay = document.getElementById("overlay");
   let navOpen = false;
 
   // Add a click event listener to the document
@@ -22,10 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
   function toggleNav() {
     if(navOpen == false){
       navLinks.classList.toggle("active");
+      overlay.classList.toggle("active");
       navOpen = true;
     }
     else{
       navLinks.classList.remove("active");
+      overlay.classList.remove("active");
       navOpen = false;
     }
   }

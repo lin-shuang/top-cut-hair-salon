@@ -101,7 +101,7 @@ nav {
     position: fixed;
     top: 3.5rem; /* Adjust as needed to avoid overlapping the header */
     left: auto; /* Reset the right property to default */
-    background-color: var(--primary);
+    background-color: var(--background);
     width: 25%;
     z-index: 998; /* Ensure the menu stays above the rest of the content */
     right: -100%; /* Move the links off the screen */
@@ -170,6 +170,22 @@ nav {
     padding-left: 1rem;
     opacity: 0.5; /* Initially invisible */
   }
+}
+
+/* Background Overlay styles */
+.overlay {
+  display: none; /* Initially hidden */
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.overlay.active {
+  display: block; /* Show the overlay when active */
+  backdrop-filter: blur(5px); /* Apply a blur effect to the background */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
+  width: 100%; 
+  height: 100vh;
+  z-index: 2;
 }
 
 /* Hero section styles */
