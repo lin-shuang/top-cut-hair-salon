@@ -7,29 +7,39 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-          <div class="logo"><b>Top Cut Hair Salon</b></div>
-          <div class="menu-icon" id="menu-icon" onclick="openSideMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </div>
-          <ul class="nav-links" id="nav-links">
-            <li><a href="index.html"><b>Home</b></a></li>
-            <li><a href="#services"><b>Services</b></a></li>
-            <li><a href="gallery.html"><b>Gallery</b></a></li>
-            <li><a href="#contact"><b>Contact Us</b></a></li>
-          </ul>
-        </nav>
-    </header>
+  <!-- Header Bar -->
+  <header>
+    <nav>
+      <div class="logo"><b>Top Cut Hair Salon</b></div>
+      <div class="menu-icon" id="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="menu-overlay" id="menu-overlay"></div>
 
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"><b>Home</b></a></li>
+        <li><a href="#services"><b>Services</b></a></li>
+        <li><a href="gallery.html"><b>Gallery</b></a></li>
+        <li><a href="#info-container"><b>Contact Us</b></a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-        <p>&copy; 2023 Top Cut Hair Salon. All rights reserved.</p>
-    </footer>
+  <section id="gallery-google">
+    <div id="info-container">
+      <div id="google-maps-embed"></div>
+      <i>Sourced from Google Maps</i>
+    </div>
+  </section>
 
-    <script src="./src/scripts/nav-links.js"></script>
+  <br>
+  <footer>
+      <p>&copy; 2023 Top Cut Hair Salon. All rights reserved.</p>
+  </footer>
+
+  <script src="./src/scripts/gallery-google.js"></script>
 
 </body>
 </html>

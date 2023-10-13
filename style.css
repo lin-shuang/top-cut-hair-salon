@@ -338,7 +338,7 @@ nav {
 }
 
 /* Contact section styles */
-#info-jump {
+#info-container {
  background-color: var(--primary);
  margin-left: 5%;
  margin-right: 5%;
@@ -479,6 +479,19 @@ footer {
   color: #fff;
   position:relative;
   bottom: 0;
+}
+
+/* Gallery Page */
+#gallery-google {
+  margin-top: 10%;
+  text-align: center;
+}
+#gallery-google i {
+  padding-bottom: 5%;
+}
+
+#google-maps-embed {
+  padding-top: 2%;
 }
 
 /* debug outline
