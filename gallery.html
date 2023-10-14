@@ -29,12 +29,22 @@
   </header>
   <div class="overlay" id="overlay"></div>
 
+  <!-- Gallery -->
   <section id="gallery-google">
     <div id="info-container">
-      <div id="google-maps-embed"></div>
+      <div class="image-grid"></div>
       <i>Sourced from Google Maps</i>
     </div>
   </section>
+  <!-- Popup Container -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <div class="popup-info">
+        <img src="" alt="" id="popup-image">
+      </div>
+    </div>
+  </div>
 
   <br>
   <footer>
@@ -42,7 +52,16 @@
   </footer>
 
   <script src="./src/scripts/nav-links.js"></script>
+  <script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+      key: "AIzaSyAEzbRp3mqa1X5D_2_zkV9LgSGLKWwNeBA",
+      v: "beta",
+      // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+      // Add other bootstrap parameters as needed, using camel case.
+    });
+  </script>
   <script src="./src/scripts/gallery-google.js"></script>
+  <script src="./src/scripts/gallery-popup.js"></script>
 
 </body>
 </html>

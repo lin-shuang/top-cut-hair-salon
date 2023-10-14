@@ -1,29 +1,66 @@
-// Function to embed Google Maps
-function embedGoogleMaps() {
-// Replace "YOUR_API_KEY" with your Google Maps API Key
-const apiKey = "YOUR_API_KEY";
+window.onload = async function () {
 
-// Replace "PLACE_ID" with the Place ID of the business
-const placeId = "PLACE_ID";
+    const {Place} = await google.maps.importLibrary("places");
 
-// Create the Google Maps Embed URL
-const embedURL = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=place_id:${placeId}`;
+    // Replace with your Google Maps API Key
+    const apiKey = "AIzaSyAEzbRp3mqa1X5D_2_zkV9LgSGLKWwNeBA";
 
-// Create an iframe element
-const iframe = document.createElement("iframe");
+    // Replace with the Place ID of the business
+    const placeId = "ChIJZYL77wezxokRydiONE5IIjw";
 
-// Set the attributes for the iframe
-iframe.src = embedURL;
-iframe.width = "100%";
-iframe.height = "450";
-iframe.style.border = "0"; // Optional: Remove iframe border
+    // The maximum number of photos to retrieve
+    var maxPhotos = 10;
 
-// Get the target div to embed the map
-const targetDiv = document.getElementById("google-maps-embed");
+    // Initialize the Google Places Service
+    var service = new google.maps.places.PlacesService(document.createElement('div'));
 
-// Append the iframe to the target div
-targetDiv.appendChild(iframe);
+    // Retrieve photos for the specified place
+    service.getDetails(
+        { placeId: placeId, fields: ['photos'] },
+        function (place, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK && place.photos) {
+                // Get the container where you want to display the photos (assuming a div with id 'photo-gallery')
+                var galleryContainer = document.querySelector(".image-grid");
+      
+                // Loop through the photos and create gallery items
+                place.photos.forEach(function (photo, index) {
+                    var imgSrc = photo.getUrl({ maxWidth: 500, maxHeight: 500 });
+
+                    // No date parameter for Place Photos class
+                    //var date = new Date(photo.creationTime).toDateString();
+                    var date = "";
+            
+                    // Create a new gallery item
+                    var galleryItem = document.createElement('div');
+                    galleryItem.classList.add('grid-item');
+            
+                    // Create the image element
+                    var imgElement = document.createElement('img');
+                    imgElement.src = imgSrc;
+            
+                    // Create the description elements
+                    var description = document.createElement('div');
+                    description.classList.add('description');
+                    description.innerHTML = '<b>' + date + '</b>';
+            
+                    var descriptionClickable = document.createElement('div');
+                    descriptionClickable.classList.add('description-clickable');
+                    descriptionClickable.innerHTML = 'Click to open';
+            
+                    // Add an event listener to open the popup when the description is clicked
+                    descriptionClickable.addEventListener('click', function () {
+                        openPopup(imgSrc, date);
+                    });
+            
+                    // Append elements to the gallery item
+                    galleryItem.appendChild(imgElement);
+                    galleryItem.appendChild(description);
+                    galleryItem.appendChild(descriptionClickable);
+            
+                    // Append the gallery item to the gallery container
+                    galleryContainer.appendChild(galleryItem);
+                });
+            }
+        }
+    );
 }
-
-// Call the function to embed Google Maps
-embedGoogleMaps();
