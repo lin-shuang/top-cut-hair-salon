@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-    font-family: Arial, sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
     --text: rgb(255, 255, 255);
     --background: rgb(32, 32, 32);
     --primary: rgb(64, 64, 64);
